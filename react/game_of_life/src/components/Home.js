@@ -33,9 +33,8 @@ function Home () {
         </ul>
       </div> 
 
-      <div className="game-specs start-game">
-        <Link to="/game"><button>Get Started!</button></Link>
-      </div>
+      <Link to="/game"><button id="btn1">Get Started!</button></Link>
+    
     </div>
   );
 }

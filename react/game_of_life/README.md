@@ -20,7 +20,7 @@ under a specific set of rules.
 ## Stretch Goal - Deployment
 
 ```
-  App deployed via Netlify [link here]
+  App deployed via Netlify https://gameoflife-rip-conway.netlify.app
 ```
 
 ---

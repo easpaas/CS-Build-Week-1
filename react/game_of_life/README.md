@@ -5,8 +5,7 @@
 - To run this application from deployment, follow link (below)
 
 ## Project Purpose
-This project simulates celluar automaton by allowing users to <br /> 
-visualize the process of how cells interact with one another, <br />
+This project simulates celluar automaton by allowing users to visualize the process of how cells interact with one another, <br />
 under a specific set of rules.
 
 

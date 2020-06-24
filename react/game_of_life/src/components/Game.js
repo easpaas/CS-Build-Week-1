@@ -177,7 +177,7 @@ class Game extends React.Component {
       <div className="Main">
         <div className="Header">
           <h1>Conway's Game of Life</h1>
-          <Link to="/"><button>Home</button></Link>
+          <Link to="/"><button className="button">Home</button></Link>
         </div>
 
         <div className="Body">
@@ -196,12 +196,12 @@ class Game extends React.Component {
             <h2>Controls</h2>
             Update every <input value={interval} onChange={this.handleIntervalChange} /> msec
             {isRunning ?
-                <button className="button" onClick={this.stopGame}>Stop</button> :
-                <button className="button" onClick={this.runGame}>Run</button>
+                <button onClick={this.stopGame}>Stop</button> :
+                <button onClick={this.runGame}>Run</button>
               }
             <div className="control-btm">
-              <button className="button" onClick={this.handleRandom}>Random</button>
-              <button className="button" onClick={this.handleClear}>Clear</button>
+              <button onClick={this.handleRandom}>Random</button>
+              <button onClick={this.handleClear}>Clear</button>
             </div>
           </div>
         </div>

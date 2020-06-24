@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
 import './Home.css';
 
 
@@ -34,7 +35,7 @@ function Home () {
       </div> 
 
       <div className="game-specs start-game">
-        <Link to="/game"><button>Get Started!</button></Link>
+        <Link to="/game"><Button variant="primary" size="lg">Get Started!</Button></Link>
       </div>
     </div>
   );

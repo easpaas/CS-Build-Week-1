@@ -180,7 +180,7 @@ class Game extends React.Component {
           <Link to="/"><button className="button">Home</button></Link>
         </div>
 
-        <div className="Body">
+        {/* <div className="Body"> */}
           <div 
             className="Board"
             style={{ width: WIDTH, height: HEIGHT, backgroundSize: `${CELL_SIZE}px ${CELL_SIZE}px`}}
@@ -195,16 +195,16 @@ class Game extends React.Component {
           <div className="Controls">
             <h2>Controls</h2>
             Update every <input value={interval} onChange={this.handleIntervalChange} /> msec
-            {isRunning ?
-                <button onClick={this.stopGame}>Stop</button> :
-                <button onClick={this.runGame}>Run</button>
-              }
             <div className="control-btm">
-              <button onClick={this.handleRandom}>Random</button>
-              <button onClick={this.handleClear}>Clear</button>
+              {isRunning ?
+                  <button className="button" onClick={this.stopGame}>Stop</button> :
+                  <button className="button" onClick={this.runGame}>Run</button>
+                }
+                <button className="button" id="1" onClick={this.handleRandom}>Random</button>
+              <button className="button" id="2" onClick={this.handleClear}>Clear</button>
             </div>
           </div>
-        </div>
+        {/* </div> */}
       </div>
     );
   }

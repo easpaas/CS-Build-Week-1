@@ -28,27 +28,28 @@
   position: absolute;
 }
 .Controls {
-  width: 20%;
+  /* width: 100%; */
   background-color: black;
   color: rgb(221, 10, 52);
   padding: 1%;
+  margin-top: 1%;
 }
 .Controls h2 {
   font-family: Permanent Marker, cursive;
   color:rgb(221, 10, 52);
   margin-top: 0;
-  margin-bottom: 10%;
 }
 .control-btm {
+  width: 40%;
+  margin: 1% auto;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
 }
 
 .button {
   display: inline-block;
   padding: 15px 25px;
-  font-size: 24px;
+  font-size: 20px;
   cursor: pointer;
   text-align: center;
   text-decoration: none;

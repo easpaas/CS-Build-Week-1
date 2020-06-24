@@ -4,25 +4,19 @@
 - To run this application locally, follow available scripts (below)
 - To run this application from deployment, follow link (below)
 
-
 ## Project Purpose
-```
 This project simulates celluar automaton by allowing users to <br /> 
 visualize the process of how cells interact with one another, <br />
 under a specific set of rules.
-```
+
 
 ## TODO list/wishlist
-```
-  - Implement additional features for grid configurations
-```
+- Implement additional features for grid configurations
 
 ## Added Features
-
-``` * Random cell configuration
-  * Additional cell properties such as color/size
-  * Allow users to specify the speed of the simulation
-```
+- Random cell configuration
+- Additional cell properties such as color/size
+- Allow users to specify the speed of the simulation
 
 ## Stretch Goal - Deployment
 

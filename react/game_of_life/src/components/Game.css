@@ -35,7 +35,7 @@ h1 {
   flex-direction: column;
   height: 350px;
   width: 50%;
-  align-content: space-around;
+  justify-content: space-around;
   margin: 10% auto;
 }
 .button {

@@ -158,10 +158,11 @@ class Game extends React.Component {
     const { cells, interval, isRunning } = this.state;
     return (
       <>
-      {/* <div className="Main"> */}
         <div className="Header">
           <h1>Conway's Game of Life</h1>
-          <Link to="/"><button className="button">Home</button></Link>
+          <Link to="/">
+            <button className="button">Home</button>
+          </Link>
         </div>
 
         <div className="Body">

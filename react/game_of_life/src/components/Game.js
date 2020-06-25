@@ -1,7 +1,7 @@
 import React from 'react'; 
 import {Link} from 'react-router-dom';
+import Cell from './Cell';
 import './Game.css';
-
 
 // Default game board values
 const CELL_SIZE = 20;
@@ -9,25 +9,8 @@ const WIDTH = 800;
 const HEIGHT = 600;
 
 
-// Cell function
-class Cell extends React.Component {
-
-  render() {
-      const { x, y } = this.props;
-      return (
-          <div className="Cell" style={{
-              left: `${CELL_SIZE * x + 1}px`,
-              top: `${CELL_SIZE * y + 1}px`,
-              width: `${CELL_SIZE - 1}px`,
-              height: `${CELL_SIZE - 1}px`,
-          }} />
-      );
-  }
-}
-
 // Game function
 class Game extends React.Component {
-
   constructor() {
       super();
       this.rows = HEIGHT / CELL_SIZE;
@@ -174,38 +157,46 @@ class Game extends React.Component {
   render() {
     const { cells, interval, isRunning } = this.state;
     return (
-      <div className="Main">
+      <>
+      {/* <div className="Main"> */}
         <div className="Header">
           <h1>Conway's Game of Life</h1>
           <Link to="/"><button className="button">Home</button></Link>
         </div>
 
-        {/* <div className="Body"> */}
+        <div className="Body">
           <div 
             className="Board"
             style={{ width: WIDTH, height: HEIGHT, backgroundSize: `${CELL_SIZE}px ${CELL_SIZE}px`}}
             onClick={this.handleClick}
             ref={(n) => { this.boardRef = n }}
             >
-            {cells.map(cell => (
-              <Cell x={cell.x} y={cell.y} key={`${cell.x},${cell.y}`}/>
-              ))}
+            {
+              // Map over cells array in state, pass props to Cell component
+              cells.map(cell => (
+                <Cell size={CELL_SIZE} x={cell.x} y={cell.y} key={`${cell.x},${cell.y}`}/>
+              ))
+            }
           </div>
 
           <div className="Controls">
-            <h2>Controls</h2>
-            Update every <input value={interval} onChange={this.handleIntervalChange} /> msec
+            <div className="control-top">
+              <h2>Controls</h2>
+              Update every  <br/>
+              <input value={interval} onChange={this.handleIntervalChange} /> <br />
+              msec
+            </div>
             <div className="control-btm">
               {isRunning ?
                   <button className="button" onClick={this.stopGame}>Stop</button> :
                   <button className="button" onClick={this.runGame}>Run</button>
                 }
-                <button className="button" id="1" onClick={this.handleRandom}>Random</button>
-              <button className="button" id="2" onClick={this.handleClear}>Clear</button>
+              <button className="button" onClick={this.handleRandom}>Random</button>
+              <button className="button" onClick={this.handleClear}>Clear</button>
             </div>
           </div>
-        {/* </div> */}
-      </div>
+        </div> 
+      </>
     );
   }
 }

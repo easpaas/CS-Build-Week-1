@@ -1,21 +1,13 @@
-.Main h1 {
-  margin: 4%;
+h1 {
+  margin: 2%;
   font-family: Permanent Marker, cursive;
 }
-.Header{
+.Header {
   margin-bottom: 2%;
 }
 .Body {
   display: flex;
   justify-content: space-between;
-  margin: 2%;
-}
-.Home {
-  background-color: rgb(221, 10, 52);
-  color: black;
-  margin: 4% auto;
-  width: 15%;
-  padding: 2%;
 }
 .Board {
   position: relative; 
@@ -28,11 +20,10 @@
   position: absolute;
 }
 .Controls {
-  /* width: 100%; */
-  background-color: black;
+  display: flex;
+  flex-direction: column;
+  width: 25%;
   color: rgb(221, 10, 52);
-  padding: 1%;
-  margin-top: 1%;
 }
 .Controls h2 {
   font-family: Permanent Marker, cursive;
@@ -40,12 +31,13 @@
   margin-top: 0;
 }
 .control-btm {
-  width: 40%;
-  margin: 1% auto;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  height: 350px;
+  width: 50%;
+  align-content: space-around;
+  margin: 10% auto;
 }
-
 .button {
   display: inline-block;
   padding: 15px 25px;
@@ -60,9 +52,9 @@
   border-radius: 15px;
   box-shadow: 0 9px #999;
 }
-
-.button:hover {background-color: rgb(177,1,1)}
-
+.button:hover {
+  background-color: rgb(177,1,1)
+}
 .button:active {
   background-color: rgb(177,1,1);
   box-shadow: 0 5px #666;

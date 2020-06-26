@@ -12,17 +12,17 @@ const HEIGHT = 600;
 // Game function
 class Game extends React.Component {
   constructor() {
-      super();
-      this.rows = HEIGHT / CELL_SIZE;
-      this.cols = WIDTH / CELL_SIZE;
+    super();
+    this.rows = HEIGHT / CELL_SIZE;
+    this.cols = WIDTH / CELL_SIZE;
 
-      this.board = this.makeEmptyBoard();
+    this.board = this.makeEmptyBoard();
   }
 
   state = {
-      cells: [],
-      isRunning: false,
-      interval: 100,
+    cells: [],
+    isRunning: false,
+    interval: 100,
   }
 
   /*
@@ -132,7 +132,6 @@ class Game extends React.Component {
         neighbors++;
       }
     }
-
     return neighbors;
   } 
 
@@ -158,45 +157,45 @@ class Game extends React.Component {
     const { cells, interval, isRunning } = this.state;
     return (
       <>
-        <div className="Header">
-          <h1>Conway's Game of Life</h1>
-          <Link to="/">
-            <button className="button">Home</button>
-          </Link>
+      <div className="Header">
+        <h1>Conway's Game of Life</h1>
+        <Link to="/">
+          <button className="button">Home</button>
+        </Link>
+      </div>
+
+      <div className="Body">
+        <div 
+          className="Board"
+          style={{ width: WIDTH, height: HEIGHT, backgroundSize: `${CELL_SIZE}px ${CELL_SIZE}px`}}
+          onClick={this.handleClick}
+          ref={(n) => { this.boardRef = n }}
+          >
+          {
+            // Map over cells array in state, pass props to Cell component
+            cells.map(cell => (
+              <Cell size={CELL_SIZE} x={cell.x} y={cell.y} key={`${cell.x},${cell.y}`}/>
+            ))
+          }
         </div>
 
-        <div className="Body">
-          <div 
-            className="Board"
-            style={{ width: WIDTH, height: HEIGHT, backgroundSize: `${CELL_SIZE}px ${CELL_SIZE}px`}}
-            onClick={this.handleClick}
-            ref={(n) => { this.boardRef = n }}
-            >
-            {
-              // Map over cells array in state, pass props to Cell component
-              cells.map(cell => (
-                <Cell size={CELL_SIZE} x={cell.x} y={cell.y} key={`${cell.x},${cell.y}`}/>
-              ))
-            }
+        <div className="Controls">
+          <div className="control-top">
+            <h2>Controls</h2>
+            Update every  <br/>
+            <input value={interval} onChange={this.handleIntervalChange} /> <br />
+            msec
           </div>
-
-          <div className="Controls">
-            <div className="control-top">
-              <h2>Controls</h2>
-              Update every  <br/>
-              <input value={interval} onChange={this.handleIntervalChange} /> <br />
-              msec
-            </div>
-            <div className="control-btm">
-              {isRunning ?
-                  <button className="button" onClick={this.stopGame}>Stop</button> :
-                  <button className="button" onClick={this.runGame}>Run</button>
-                }
-              <button className="button" onClick={this.handleRandom}>Random</button>
-              <button className="button" onClick={this.handleClear}>Clear</button>
-            </div>
+          <div className="control-btm">
+            {isRunning ?
+                <button className="button" onClick={this.stopGame}>Stop</button> :
+                <button className="button" onClick={this.runGame}>Run</button>
+              }
+            <button className="button" onClick={this.handleRandom}>Random</button>
+            <button className="button" onClick={this.handleClear}>Clear</button>
           </div>
-        </div> 
+        </div>
+      </div> 
       </>
     );
   }
